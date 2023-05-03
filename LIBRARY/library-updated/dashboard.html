@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Library</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+      <link href="./css/style.css" rel="stylesheet">
+      <link href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
+      <link href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css" rel="stylesheet">
+      <link href="https://cdn.datatables.net/select/1.4.0/css/select.dataTables.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+      <link rel="stylesheet" href="style.css">
+
+      <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+      <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+      <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+      <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+      <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
+      <script type="text/javascript" src="https://cdn.datatables.net/select/1.4.0/js/dataTables.select.min.js"></script>
+      <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.colVis.min.js"></script>
+
+      <style>
+
+      button.dt-button:first-child, div.dt-button:first-child, a.dt-button:first-child, input.dt-button:first-child {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.dataTables_filter{
+  margin:10px;
+}
+      </style>
+
+
+  </head>
+  <body>
+<!-- START OF HEADER MENU -->
+    <nav class="navbar navbar-expand-lg  " style="background:#0f3554;">
+  <div class="container-fluid">
+    <!-- Toggle Button -->
+
+
+    <a class="navbar-brand" href="#">
+      <img src="./img/GRD-MEMORIAL-ligh.jpg" alt="" width="auto" height="60" style="border-radius: 10px;" loading="lazy" class="d-inline-block align-text-top"></a>
+
+      <!-- Right Elements -->
+      <div class="dropdown">
+        <a href="#" data-bs-toggle="dropdown" id="dropdownMenuButton" aria-expanded="false">
+        <img src="./img/user.svg">
+        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">E-Library</a>
+
+       <div class="dropdown-divider"></div>
+       <a class="dropdown-item" href="#">Logout</a>
+       </div>
+     </div>
+          </nav>
+
+
+<!-- END OF HEADER MENU -->
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3 mt-5">
+      <div class="accordion" id="accordionPanelsStayOpenExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+        What you want to do?
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+      <div class="accordion-body">
+        <input class="form-control" type="text" placeholder="Author Name, Book Name, Publisher Name" aria-label="default input example">
+
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+        Library Type
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+      <div class="accordion-body">
+        <div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1">
+    Main Library
+  </label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+  <label class="form-check-label" for="flexRadioDefault2">
+    Book Bank
+  </label>
+</div>
+
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+  <label class="form-check-label" for="flexRadioDefault2">
+    Journals
+  </label>
+</div>
+
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+  <label class="form-check-label" for="flexRadioDefault2">
+    Back Volume
+  </label>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+        Department
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+      <div class="accordion-body">
+        <select class="form-select" aria-label="Default select example">
+  <option selected>Open this select menu</option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+</select>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="col-md-9 mt-5">
+      <div class="card">
+      <div class="card-header">Available Books</div>
+      <div class="body">
+
+        <table id="example" class="display nowrap" style="width:100%">
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Acc No</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Publisher</th>
+                <th>Call No</th>
+                <th>Library</th>
+                <th>Type</th>
+                <th>Status</th>
+                <th>Group</th>
+                <th>Edition</th>
+                <th>Year</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+              <td style="font-size:14px">1937</td>
+                          <td style="font-size:14px" >1</td>
+                          <td style="font-size:14px"><a href="#" class="stretched-link">Mechanical Engineering</a></td>
+                          <td style="font-size:14px">Wilfred Lineham J</td>
+                          <td style="font-size:14px">Chapman & Hall</td>
+                          <td style="font-size:14px">620.1 M94</td>
+                          <td style="font-size:14px">Main</td>
+                          <td style="font-size:14px">Book</td>
+                          <td style="font-size:14px">Avl</td>
+                          <td style="font-size:14px">LCK</td>
+                          <td style="font-size:14px">0</td>
+                          <td style="font-size:14px">1894</td>
+
+            </tr>
+            <tr>
+              <td style="font-size:14px">1937</td>
+                        <td style="font-size:14px" >2</td>
+                        <td style="font-size:14px"><a href="#" class="stretched-link">Mechanical Engineering</a></td>
+                        <td style="font-size:14px">Wilfred Lineham J</td>
+                        <td style="font-size:14px">Chapman & Hall</td>
+                        <td style="font-size:14px">620.1 M94</td>
+                        <td style="font-size:14px">Main</td>
+                        <td style="font-size:14px">Book</td>
+                        <td style="font-size:14px">Avl</td>
+                        <td style="font-size:14px">LCK</td>
+                        <td style="font-size:14px">0</td>
+                        <td style="font-size:14px">1894</td>
+            </tr>
+
+            <tr>
+              <td style="font-size:14px">1937</td>
+                        <td style="font-size:14px" >2</td>
+                        <td style="font-size:14px"><a href="#" class="stretched-link">Mechanical Engineering</a></td>
+                        <td style="font-size:14px">Wilfred Lineham J</td>
+                        <td style="font-size:14px">Chapman & Hall</td>
+                        <td style="font-size:14px">620.1 M94</td>
+                        <td style="font-size:14px">Main</td>
+                        <td style="font-size:14px">Book</td>
+                        <td style="font-size:14px">Avl</td>
+                        <td style="font-size:14px">LCK</td>
+                        <td style="font-size:14px">0</td>
+                        <td style="font-size:14px">1894</td>
+            </tr>
+
+            <tr>
+              <td style="font-size:14px">1937</td>
+                        <td style="font-size:14px" >2</td>
+                        <td style="font-size:14px"><a href="#" class="stretched-link">Mechanical Engineering</a></td>
+                        <td style="font-size:14px">Wilfred Lineham J</td>
+                        <td style="font-size:14px">Chapman & Hall</td>
+                        <td style="font-size:14px">620.1 M94</td>
+                        <td style="font-size:14px">Main</td>
+                        <td style="font-size:14px">Book</td>
+                        <td style="font-size:14px">Avl</td>
+                        <td style="font-size:14px">LCK</td>
+                        <td style="font-size:14px">0</td>
+                        <td style="font-size:14px">1894</td>
+            </tr>
+
+            <tr>
+              <td style="font-size:14px">1937</td>
+                        <td style="font-size:14px" >2</td>
+                        <td style="font-size:14px"><a href="#" class="stretched-link">Mechanical Engineering</a></td>
+                        <td style="font-size:14px">Wilfred Lineham J</td>
+                        <td style="font-size:14px">Chapman & Hall</td>
+                        <td style="font-size:14px">620.1 M94</td>
+                        <td style="font-size:14px">Main</td>
+                        <td style="font-size:14px">Book</td>
+                        <td style="font-size:14px">Avl</td>
+                        <td style="font-size:14px">LCK</td>
+                        <td style="font-size:14px">0</td>
+                        <td style="font-size:14px">1894</td>
+            </tr>
+
+            <tr>
+              <td style="font-size:14px">1937</td>
+                        <td style="font-size:14px" >2</td>
+                        <td style="font-size:14px"><a href="#" class="stretched-link">Mechanical Engineering</a></td>
+                        <td style="font-size:14px">Wilfred Lineham J</td>
+                        <td style="font-size:14px">Chapman & Hall</td>
+                        <td style="font-size:14px">620.1 M94</td>
+                        <td style="font-size:14px">Main</td>
+                        <td style="font-size:14px">Book</td>
+                        <td style="font-size:14px">Avl</td>
+                        <td style="font-size:14px">LCK</td>
+                        <td style="font-size:14px">0</td>
+                        <td style="font-size:14px">1894</td>
+            </tr>
+
+            <tr>
+              <td style="font-size:14px">1937</td>
+                        <td style="font-size:14px" >2</td>
+                        <td style="font-size:14px"><a href="#" class="stretched-link">Mechanical Engineering</a></td>
+                        <td style="font-size:14px">Wilfred Lineham J</td>
+                        <td style="font-size:14px">Chapman & Hall</td>
+                        <td style="font-size:14px">620.1 M94</td>
+                        <td style="font-size:14px">Main</td>
+                        <td style="font-size:14px">Book</td>
+                        <td style="font-size:14px">Avl</td>
+                        <td style="font-size:14px">LCK</td>
+                        <td style="font-size:14px">0</td>
+                        <td style="font-size:14px">1894</td>
+            </tr>
+
+            <tr>
+              <td style="font-size:14px">1937</td>
+                        <td style="font-size:14px" >2</td>
+                        <td style="font-size:14px"><a href="#" class="stretched-link">Mechanical Engineering</a></td>
+                        <td style="font-size:14px">Wilfred Lineham J</td>
+                        <td style="font-size:14px">Chapman & Hall</td>
+                        <td style="font-size:14px">620.1 M94</td>
+                        <td style="font-size:14px">Main</td>
+                        <td style="font-size:14px">Book</td>
+                        <td style="font-size:14px">Avl</td>
+                        <td style="font-size:14px">LCK</td>
+                        <td style="font-size:14px">0</td>
+                        <td style="font-size:14px">1894</td>
+            </tr>
+            <tr>
+              <td style="font-size:14px">1937</td>
+                        <td style="font-size:14px" >2</td>
+                        <td style="font-size:14px"><a href="#" class="stretched-link">Mechanical Engineering</a></td>
+                        <td style="font-size:14px">Wilfred Lineham J</td>
+                        <td style="font-size:14px">Chapman & Hall</td>
+                        <td style="font-size:14px">620.1 M94</td>
+                        <td style="font-size:14px">Main</td>
+                        <td style="font-size:14px">Book</td>
+                        <td style="font-size:14px">Avl</td>
+                        <td style="font-size:14px">LCK</td>
+                        <td style="font-size:14px">0</td>
+                        <td style="font-size:14px">1894</td>
+            </tr>
+
+            <tr>
+              <td style="font-size:14px">1937</td>
+                        <td style="font-size:14px" >2</td>
+                        <td style="font-size:14px"><a href="#" class="stretched-link">Mechanical Engineering</a></td>
+                        <td style="font-size:14px">Wilfred Lineham J</td>
+                        <td style="font-size:14px">Chapman & Hall</td>
+                        <td style="font-size:14px">620.1 M94</td>
+                        <td style="font-size:14px">Main</td>
+                        <td style="font-size:14px">Book</td>
+                        <td style="font-size:14px">Avl</td>
+                        <td style="font-size:14px">LCK</td>
+                        <td style="font-size:14px">0</td>
+                        <td style="font-size:14px">1894</td>
+            </tr>
+
+            <tr>
+              <td style="font-size:14px">1937</td>
+                        <td style="font-size:14px" >2</td>
+                        <td style="font-size:14px"><a href="#" class="stretched-link">Mechanical Engineering</a></td>
+                        <td style="font-size:14px">Wilfred Lineham J</td>
+                        <td style="font-size:14px">Chapman & Hall</td>
+                        <td style="font-size:14px">620.1 M94</td>
+                        <td style="font-size:14px">Main</td>
+                        <td style="font-size:14px">Book</td>
+                        <td style="font-size:14px">Avl</td>
+                        <td style="font-size:14px">LCK</td>
+                        <td style="font-size:14px">0</td>
+                        <td style="font-size:14px">1894</td>
+            </tr>
+
+            <tr>
+              <td style="font-size:14px">1937</td>
+                        <td style="font-size:14px" >2</td>
+                        <td style="font-size:14px"><a href="#" class="stretched-link">Mechanical Engineering</a></td>
+                        <td style="font-size:14px">Wilfred Lineham J</td>
+                        <td style="font-size:14px">Chapman & Hall</td>
+                        <td style="font-size:14px">620.1 M94</td>
+                        <td style="font-size:14px">Main</td>
+                        <td style="font-size:14px">Book</td>
+                        <td style="font-size:14px">Avl</td>
+                        <td style="font-size:14px">LCK</td>
+                        <td style="font-size:14px">0</td>
+                        <td style="font-size:14px">1894</td>
+            </tr>
+
+            <tr>
+              <td style="font-size:14px">1937</td>
+                        <td style="font-size:14px" >2</td>
+                        <td style="font-size:14px"><a href="#" class="stretched-link">Mechanical Engineering</a></td>
+                        <td style="font-size:14px">Wilfred Lineham J</td>
+                        <td style="font-size:14px">Chapman & Hall</td>
+                        <td style="font-size:14px">620.1 M94</td>
+                        <td style="font-size:14px">Main</td>
+                        <td style="font-size:14px">Book</td>
+                        <td style="font-size:14px">Avl</td>
+                        <td style="font-size:14px">LCK</td>
+                        <td style="font-size:14px">0</td>
+                        <td style="font-size:14px">1894</td>
+            </tr>
+
+            <tr>
+              <td style="font-size:14px">1937</td>
+                        <td style="font-size:14px" >2</td>
+                        <td style="font-size:14px"><a href="#" class="stretched-link">Mechanical Engineering</a></td>
+                        <td style="font-size:14px">Wilfred Lineham J</td>
+                        <td style="font-size:14px">Chapman & Hall</td>
+                        <td style="font-size:14px">620.1 M94</td>
+                        <td style="font-size:14px">Main</td>
+                        <td style="font-size:14px">Book</td>
+                        <td style="font-size:14px">Avl</td>
+                        <td style="font-size:14px">LCK</td>
+                        <td style="font-size:14px">0</td>
+                        <td style="font-size:14px">1894</td>
+            </tr>
+
+            <tr>
+              <td style="font-size:14px">1937</td>
+                        <td style="font-size:14px" >2</td>
+                        <td style="font-size:14px"><a href="#" class="stretched-link">Mechanical Engineering</a></td>
+                        <td style="font-size:14px">Wilfred Lineham J</td>
+                        <td style="font-size:14px">Chapman & Hall</td>
+                        <td style="font-size:14px">620.1 M94</td>
+                        <td style="font-size:14px">Main</td>
+                        <td style="font-size:14px">Book</td>
+                        <td style="font-size:14px">Avl</td>
+                        <td style="font-size:14px">LCK</td>
+                        <td style="font-size:14px">0</td>
+                        <td style="font-size:14px">1894</td>
+            </tr>
+
+            <tr>
+              <td style="font-size:14px">1937</td>
+                        <td style="font-size:14px" >2</td>
+                        <td style="font-size:14px"><a href="#" class="stretched-link">Mechanical Engineering</a></td>
+                        <td style="font-size:14px">Wilfred Lineham J</td>
+                        <td style="font-size:14px">Chapman & Hall</td>
+                        <td style="font-size:14px">620.1 M94</td>
+                        <td style="font-size:14px">Main</td>
+                        <td style="font-size:14px">Book</td>
+                        <td style="font-size:14px">Avl</td>
+                        <td style="font-size:14px">LCK</td>
+                        <td style="font-size:14px">0</td>
+                        <td style="font-size:14px">1894</td>
+            </tr>
+
+            <tr>
+              <td style="font-size:14px">1937</td>
+                        <td style="font-size:14px" >2</td>
+                        <td style="font-size:14px"><a href="#" class="stretched-link">Mechanical Engineering</a></td>
+                        <td style="font-size:14px">Wilfred Lineham J</td>
+                        <td style="font-size:14px">Chapman & Hall</td>
+                        <td style="font-size:14px">620.1 M94</td>
+                        <td style="font-size:14px">Main</td>
+                        <td style="font-size:14px">Book</td>
+                        <td style="font-size:14px">Avl</td>
+                        <td style="font-size:14px">LCK</td>
+                        <td style="font-size:14px">0</td>
+                        <td style="font-size:14px">1894</td>
+            </tr>
+
+            <tr>
+              <td style="font-size:14px">1937</td>
+                        <td style="font-size:14px" >2</td>
+                        <td style="font-size:14px"><a href="#" class="stretched-link">Mechanical Engineering</a></td>
+                        <td style="font-size:14px">Wilfred Lineham J</td>
+                        <td style="font-size:14px">Chapman & Hall</td>
+                        <td style="font-size:14px">620.1 M94</td>
+                        <td style="font-size:14px">Main</td>
+                        <td style="font-size:14px">Book</td>
+                        <td style="font-size:14px">Avl</td>
+                        <td style="font-size:14px">LCK</td>
+                        <td style="font-size:14px">0</td>
+                        <td style="font-size:14px">1894</td>
+            </tr>
+
+            <tr>
+              <td style="font-size:14px">1937</td>
+                        <td style="font-size:14px" >2</td>
+                        <td style="font-size:14px"><a href="#" class="stretched-link">Mechanical Engineering</a></td>
+                        <td style="font-size:14px">Wilfred Lineham J</td>
+                        <td style="font-size:14px">Chapman & Hall</td>
+                        <td style="font-size:14px">620.1 M94</td>
+                        <td style="font-size:14px">Main</td>
+                        <td style="font-size:14px">Book</td>
+                        <td style="font-size:14px">Avl</td>
+                        <td style="font-size:14px">LCK</td>
+                        <td style="font-size:14px">0</td>
+                        <td style="font-size:14px">1894</td>
+            </tr>
+
+            <tr>
+              <td style="font-size:14px">1937</td>
+                        <td style="font-size:14px" >2</td>
+                        <td style="font-size:14px"><a href="#" class="stretched-link">Mechanical Engineering</a></td>
+                        <td style="font-size:14px">Wilfred Lineham J</td>
+                        <td style="font-size:14px">Chapman & Hall</td>
+                        <td style="font-size:14px">620.1 M94</td>
+                        <td style="font-size:14px">Main</td>
+                        <td style="font-size:14px">Book</td>
+                        <td style="font-size:14px">Avl</td>
+                        <td style="font-size:14px">LCK</td>
+                        <td style="font-size:14px">0</td>
+                        <td style="font-size:14px">1894</td>
+            </tr>
+
+
+        </tbody>
+
+    </table>
+
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<script>
+  $(document).ready(function () {
+  $('#example').DataTable( {
+
+      "processing" : true,
+      "responsive": true,
+      "scrollX" :300,
+
+      dom: 'Bfrtip',
+      buttons: [
+          'colvis'
+      ],
+
+  } );
+
+});
+</script>
+<script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+  </body>
+</html>
